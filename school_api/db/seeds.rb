@@ -26,6 +26,6 @@ n1 = Newsletter.create!({details:'Sports day Coming Soon',date: DateTime.now(),s
   r1 = Report.create!({name:"quaterly",details: "Good",section_id:"sec1.id"})
    
    stu1 = Student.create!({name:"adi",image:'images/child.jpg',section_id:sec1.id,teacher_id: t1.id})
-   StudentReport.create!({report_id: r1.id,student_id: stu1.id})
+   StudentReport.create!({section_id:sec1.id,report_id: r1.id,student_id: stu1.id})
 
  

@@ -4,6 +4,7 @@ import School from './components/School'
 import Newsletter from './components/Newsletter'
 import Contactus from './components/Contactus'
 import UserLogin from './components/UserLogin'
+import StudentDetails from './components/StudentDetails'
 
 import Main from './components/Main'
 
@@ -19,6 +20,7 @@ render(){
             <Route exact path="/" component={School} />
             <Route path="/Newsletter" component={Newsletter}/>
             <Route path="/UserLogin" component={UserLogin}/>
+            <Route path="/StudentDetails" component={StudentDetails}/>
             
             <Route path="/Contactus" component={Contactus}/>
            

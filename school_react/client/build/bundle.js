@@ -11503,6 +11503,10 @@ var _UserLogin = __webpack_require__(62);
 
 var _UserLogin2 = _interopRequireDefault(_UserLogin);
 
+var _StudentDetails = __webpack_require__(234);
+
+var _StudentDetails2 = _interopRequireDefault(_StudentDetails);
+
 var _Main = __webpack_require__(233);
 
 var _Main2 = _interopRequireDefault(_Main);
@@ -11542,6 +11546,7 @@ var App = function (_React$Component) {
           _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _School2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/Newsletter', component: _Newsletter2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/UserLogin', component: _UserLogin2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { path: '/StudentDetails', component: _StudentDetails2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/Contactus', component: _Contactus2.default })
         )
       );
@@ -26455,6 +26460,10 @@ var _Newsletter = __webpack_require__(61);
 
 var _Newsletter2 = _interopRequireDefault(_Newsletter);
 
+var _StudentDetails = __webpack_require__(234);
+
+var _StudentDetails2 = _interopRequireDefault(_StudentDetails);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Main = function Main() {
@@ -26471,6 +26480,15 @@ var Main = function Main() {
           _reactRouterDom.Link,
           { to: '/Newsletter' },
           'Newsletter'
+        )
+      ),
+      _react2.default.createElement(
+        'li',
+        null,
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/StudentDetails' },
+          'StudentDetails'
         )
       ),
       _react2.default.createElement(
@@ -26496,6 +26514,65 @@ var Main = function Main() {
 };
 
 exports.default = Main;
+
+/***/ }),
+/* 234 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var StudentDetails = function (_React$Component) {
+  _inherits(StudentDetails, _React$Component);
+
+  function StudentDetails() {
+    _classCallCheck(this, StudentDetails);
+
+    return _possibleConstructorReturn(this, (StudentDetails.__proto__ || Object.getPrototypeOf(StudentDetails)).apply(this, arguments));
+  }
+
+  _createClass(StudentDetails, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h4',
+          null,
+          'Student'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Welcome to our Student Details'
+        )
+      );
+    }
+  }]);
+
+  return StudentDetails;
+}(_react2.default.Component);
+
+exports.default = StudentDetails;
 
 /***/ })
 /******/ ]);
