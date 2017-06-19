@@ -1,14 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Newsletter from './components/Newsletter'
-
 import School from './components/School'
-import Login from './components/UserLogin'
+import Newsletter from './components/Newsletter'
+import Contactus from './components/Contactus'
+import UserLogin from './components/UserLogin'
+
+import Main from './components/Main'
+
 import { HashRouter, Route, IndexRoute } from 'react-router-dom'
-
-
-
-
 class App extends React.Component{
 
   // const targetDiv = document.getElementById('app');
@@ -16,8 +15,13 @@ render(){
   return(
   <HashRouter>
           <div className='container'>
+            <Route path="/" component={Main} />
             <Route exact path="/" component={School} />
-             <Route exact path="/newsletters" component={Newsletter} />
+            <Route path="/Newsletter" component={Newsletter}/>
+            <Route path="/UserLogin" component={UserLogin}/>
+            
+            <Route path="/Contactus" component={Contactus}/>
+           
           </div>
         </HashRouter>
 

@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   devise_for :users
   scope path: "api" do
     resources :schools do
-     resources :newsletters
-     resources :sections
+     resources :newsletters  
+     resources :sections 
+
    end
   end
   # The priority is based upon order of creation: first created -> highest priority.
