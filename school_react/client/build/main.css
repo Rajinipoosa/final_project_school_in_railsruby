@@ -1,0 +1,29 @@
+.backimage{
+  font-family: Verdana;
+  margin: 0;
+  background-color: #FFCC99;
+
+  
+
+}
+h1, h2, h4 {
+  color: black;
+  text-align: center;
+}
+
+
+.title{
+  text-transform: uppercase;
+  font-family: Impact, Charcoal, sans-serif;
+  color: crimson;
+  font-size: 80px;
+  -webkit-text-stroke: 5px black;
+  text-decoration: none;
+
+}
+
+.home{
+  width: 50%;
+  min-width: 300px;
+  text-align: center;
+}
