@@ -13,7 +13,7 @@ class School extends React.Component{
 }
 
 componentDidMount(){
- var url = 'http://localhost:5000/api/schools'
+ var url = 'http://localhost:5000/api/schools.json'
  var request = new XMLHttpRequest()
  request.open('GET', url)
 

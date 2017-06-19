@@ -1,11 +1,11 @@
 import React from 'react';
 
-class Newsletter extends React.Component {
+class Section extends React.Component {
   constructor(props) {
     super(props);
-    this.fetchNewsLetter = this.fetchNewsLetter.bind(this);
+    this.fetchSection = this.fetchSection.bind(this);
     this.state = {
-      newsletters: []
+      sections: []
     }
   }
 
@@ -19,7 +19,7 @@ class Newsletter extends React.Component {
     request.onload = () => {
 
       if(request.status === 200){
-        this.fetchNewsLetter();
+        this.fetchSection();
       }else if(request.status === 401){
         //redirect to userlogin
         <UserLogin/>
@@ -28,10 +28,10 @@ class Newsletter extends React.Component {
     request.send(null)
   }
 
-  fetchNewsLetter(userid) {
+  fetchSection(userid) {
 
     const request = new XMLHttpRequest()
-    request.open("GET", "http://localhost:5000/api/newsletters")
+    request.open("GET", "http://localhost:5000/api/sections")
     request.setRequestHeader("Content-Type", "application/json")
     request.withCredentials = true
 
@@ -39,10 +39,10 @@ class Newsletter extends React.Component {
 
       if(request.status === 200){
         console.log('request.responseText', request.responseText)
-        const newsletters = JSON.parse(request.responseText)
+        const sections = JSON.parse(request.responseText)
 
-
-        this.setState({newsletters: newsletters});
+        console.log(sections)
+        this.setState({sections: sections});
 
 
       }
@@ -52,7 +52,7 @@ class Newsletter extends React.Component {
   }
 
   render() {
-    let news =  this.state.newsletters.map((newslet) => {
+    let secs =  this.state.sections.map((section) => {
         return <div>{newslet.details}</div>
     })
 
@@ -66,4 +66,4 @@ class Newsletter extends React.Component {
   }
 }
 
-export default Newsletter;
+export default Section;

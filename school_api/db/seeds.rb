@@ -17,11 +17,15 @@ School.delete_all()
 s1 = School.create!({name:'My School',description: 'My School opened in 1968 and has excellent accommodation and facilities, including a Food Lab, Dance & Drama Base and School Library.  My School Early Years Hub is also housed in the school building.  The school is set amidst attractive grounds which the children are encouraged to use to extend their learning outdoors.'})
 n1 = Newsletter.create!({details:'Sports day Coming Soon',date: DateTime.now(),school_id: s1.id})
 
- sec1 = Section.create({name: "p1", num_of_students: 20,school_id: s1.id})
+ 
 
- t1 = Teacher.create!({name:"Orr",email: "something@gmail.com",section_id:sec1.id})
 
  # user1 = User.create!({email:"satish.kura@gmail.com",password:"password"})
+  u1= User.create!(email: "me@home.com", password: "password")
+
+  sec1 = Section.create({name: "p1", num_of_students: 20,school_id: s1.id, user_id:u1.id})
+ t1 = Teacher.create!({name:"Orr",email: "something@gmail.com",section_id:sec1.id})
+  
 
   r1 = Report.create!({name:"quaterly",details: "Good",section_id:"sec1.id"})
    

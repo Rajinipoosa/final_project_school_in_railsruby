@@ -1,14 +1,20 @@
 Rails.application.routes.draw do
 
+  devise_for :users, :controllers => {sessions: 'sessions', registrations: 'registrations'}
 
-  devise_for :users
   scope path: "api" do
-    resources :schools do
-     resources :newsletters  
-     resources :sections 
+    resources :newsletters  
 
-   end
+    resources :schools 
+     
+  
+
+    resources :users do 
+      resources :sections
+
+    end
   end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

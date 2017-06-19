@@ -15,13 +15,15 @@ class LoginBox extends React.Component {
   }
 
   setUser(user){
-    this.setState({currentUser:user})
+    console.log(user)
+    this.setState({currentUser:user,schools:[]})
+
   }
 
   fetchUser(){
-    console.log("fetching user")
+
     const request = new XMLHttpRequest()
-    request.open("GET", this.props.url + "users.json")
+    request.open("GET", this.props.url + "api/users.json")
     request.setRequestHeader("Content-Type", "application/json")
     request.withCredentials = true
 
@@ -31,7 +33,10 @@ class LoginBox extends React.Component {
 
         console.log('request.responseText', request.responseText)
         const receivedUser = JSON.parse(request.responseText)
+
+        console.log(receivedUser)
         this.setUser(receivedUser)
+
       }else if(request.status === 401){
         this.setUser(null)
       }
@@ -47,7 +52,7 @@ class LoginBox extends React.Component {
       var mainDiv = <div>
         <h4> Please Sign In/Up </h4>
         <SignIn url={this.props.url + "users/sign_in.json"} onSignIn={this.setUser}></SignIn>
-          <SignUp url={this.props.url + "users.json"} onSignUp={this.setUser}></SignUp>
+          <SignUp url={this.props.url + "users"} onSignUp={this.setUser}></SignUp>
         </div>
         
       
