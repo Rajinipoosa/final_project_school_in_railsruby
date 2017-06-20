@@ -21,8 +21,8 @@ class Newsletter extends React.Component {
       if(request.status === 200){
         this.fetchNewsLetter();
       }else if(request.status === 401){
-        //redirect to userlogin
-        <UserLogin/>
+        // this.context.router.push('./UserLogin');
+        
       }
     }
     request.send(null)

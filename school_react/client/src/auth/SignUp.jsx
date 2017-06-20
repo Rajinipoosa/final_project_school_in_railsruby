@@ -38,6 +38,7 @@ class SignUp extends React.Component {
   }
 
   handleOnChangeEmail(event) {
+    console.log(event.target.value)
     this.setState({email: event.target.value})
   }
 

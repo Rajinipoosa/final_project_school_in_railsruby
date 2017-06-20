@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170619160426) do
+ActiveRecord::Schema.define(version: 20170620102810) do
 
   create_table "newsletters", force: :cascade do |t|
     t.text     "details"
@@ -27,13 +27,12 @@ ActiveRecord::Schema.define(version: 20170619160426) do
     t.string   "name"
     t.text     "details"
     t.integer  "section_id"
-    t.integer  "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text     "ratings"
   end
 
   add_index "reports", ["section_id"], name: "index_reports_on_section_id"
-  add_index "reports", ["student_id"], name: "index_reports_on_student_id"
 
   create_table "schools", force: :cascade do |t|
     t.text     "name"
@@ -71,13 +70,11 @@ ActiveRecord::Schema.define(version: 20170619160426) do
     t.text     "image"
     t.integer  "section_id"
     t.integer  "teacher_id"
-    t.integer  "report_id"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "students", ["report_id"], name: "index_students_on_report_id"
   add_index "students", ["section_id"], name: "index_students_on_section_id"
   add_index "students", ["teacher_id"], name: "index_students_on_teacher_id"
   add_index "students", ["user_id"], name: "index_students_on_user_id"

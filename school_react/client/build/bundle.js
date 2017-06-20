@@ -7382,8 +7382,8 @@ var Newsletter = function (_React$Component) {
         if (request.status === 200) {
           _this2.fetchNewsLetter();
         } else if (request.status === 401) {
-          //redirect to userlogin
-          _react2.default.createElement(UserLogin, null);
+          // this.context.router.push('./UserLogin');
+
         }
       };
       request.send(null);
@@ -7590,28 +7590,102 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var StudentDetails = function (_React$Component) {
   _inherits(StudentDetails, _React$Component);
 
-  function StudentDetails() {
+  function StudentDetails(props) {
     _classCallCheck(this, StudentDetails);
 
-    return _possibleConstructorReturn(this, (StudentDetails.__proto__ || Object.getPrototypeOf(StudentDetails)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (StudentDetails.__proto__ || Object.getPrototypeOf(StudentDetails)).call(this, props));
+
+    _this.fetchstudentDetails = _this.fetchstudentDetails.bind(_this);
+    _this.state = {
+      studentDetails: []
+    };
+    return _this;
   }
 
   _createClass(StudentDetails, [{
-    key: 'render',
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      var request = new XMLHttpRequest();
+
+      request.open("GET", "http://localhost:5000/api/users.json");
+      request.setRequestHeader("Content-Type", "application/json");
+      request.withCredentials = true;
+
+      request.onload = function () {
+
+        if (request.status === 200) {
+          _this2.fetchstudentDetails();
+        } else if (request.status === 401) {
+          //redirect to userlogin
+          _react2.default.createElement(UserLogin, null);
+        }
+      };
+      request.send(null);
+    }
+  }, {
+    key: "fetchstudentDetails",
+    value: function fetchstudentDetails(userid) {
+      var _this3 = this;
+
+      var request = new XMLHttpRequest();
+      request.open("GET", "http://localhost:5000/api/users/userid/students");
+      request.setRequestHeader("Content-Type", "application/json");
+      request.withCredentials = true;
+
+      request.onload = function () {
+
+        if (request.status === 200) {
+          console.log('request.responseText', request.responseText);
+          var studentDetails = JSON.parse(request.responseText);
+
+          _this3.setState({ studentDetails: studentDetails });
+        }
+      };
+      request.send(null);
+    }
+  }, {
+    key: "render",
     value: function render() {
+      var secs = this.state.studentDetails.map(function (student, index) {
+        return _react2.default.createElement(
+          "div",
+          { key: index },
+          _react2.default.createElement(
+            "ul",
+            { className: "studentd" },
+            _react2.default.createElement(
+              "li",
+              null,
+              "Name: ",
+              student.name
+            ),
+            _react2.default.createElement("li", null),
+            _react2.default.createElement(
+              "li",
+              null,
+              _react2.default.createElement("img", { src: student.image, width: "30%", height: "30%" })
+            ),
+            _react2.default.createElement(
+              "li",
+              null,
+              console.log(student.reports)
+            ),
+            _react2.default.createElement("li", null)
+          )
+        );
+      });
+
       return _react2.default.createElement(
-        'div',
+        "div",
         null,
         _react2.default.createElement(
-          'h4',
+          "h4",
           null,
-          'Student'
+          "Student Details"
         ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Welcome to our Student Details'
-        )
+        secs
       );
     }
   }]);
@@ -12174,6 +12248,7 @@ var SignIn = function (_React$Component) {
         { className: "login-form" },
         _react2.default.createElement("input", { type: "text", onChange: this.handleOnChangeEmail, placeholder: "Email" }),
         _react2.default.createElement("input", { type: "password", onChange: this.handleOnChangePassword, placeholder: "Password" }),
+        _react2.default.createElement("br", null),
         _react2.default.createElement(
           "button",
           { onClick: this.signIn },
@@ -12255,11 +12330,6 @@ var SignOut = function (_React$Component) {
           'button',
           { onClick: this.signOut },
           'Sign Out'
-        ),
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/StudentDetails' },
-          'Student Details'
         )
       );
     }
@@ -12343,6 +12413,7 @@ var SignUp = function (_React$Component) {
   }, {
     key: "handleOnChangeEmail",
     value: function handleOnChangeEmail(event) {
+      console.log(event.target.value);
       this.setState({ email: event.target.value });
     }
   }, {

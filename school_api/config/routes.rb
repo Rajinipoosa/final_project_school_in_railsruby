@@ -10,9 +10,12 @@ Rails.application.routes.draw do
   
 
     resources :users do 
-      resources :sections
-      resources :students
-
+        resources :sections
+    
+         resources :students do
+            resources :reports
+          end
+      
     end
   end
   
