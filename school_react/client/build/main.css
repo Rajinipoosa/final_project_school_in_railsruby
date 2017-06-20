@@ -95,3 +95,16 @@ button:hover{
   list-style-type: none;
   float: left;
 }
+.reportsd{
+  list-style-type: none;
+  float: left;
+}
+.contact{
+ text-align: center;
+
+
+}
+.gmap{
+  height:500;
+  width:500;
+}

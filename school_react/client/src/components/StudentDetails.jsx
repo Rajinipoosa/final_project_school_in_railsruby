@@ -5,7 +5,8 @@ class  StudentDetails extends React.Component{
       super(props);
       this.fetchstudentDetails = this.fetchstudentDetails.bind(this);
       this.state = {
-        studentDetails: []
+        studentDetails: [],
+        reportDetails: []
       }
     }
 
@@ -53,16 +54,24 @@ class  StudentDetails extends React.Component{
 
     }
   
-
     render() {
       let secs =  this.state.studentDetails.map((student,index) => {
           return <div key={index}  >
           <ul className="studentd">
           <li>Name: {student.name}</li>
-          <li></li>
+          <br/>
           <li><img src ={student.image} width = '30%' height = '30%'/></li>
-          <li>{console.log(student.reports)}</li>
-          <li></li>
+          
+         
+          { student.reports.map((report, index) => {
+
+              return   <ul className="reportsd" key={index}>   <li> Reports: {report.details}</li> </ul>
+              
+              
+          })}
+          
+         
+          
 
           </ul>
                 

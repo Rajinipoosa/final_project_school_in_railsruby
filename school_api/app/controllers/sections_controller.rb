@@ -6,7 +6,7 @@ class SectionsController < ApplicationController
    render :json =>sections
 
   end
-
+  
 
 
 end

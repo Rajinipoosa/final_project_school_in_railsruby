@@ -3,7 +3,7 @@ class StudentsController < ApplicationController
 
   def index
    student = Student.where({user_id: current_user.id})
-   render :json =>student
+   render :json =>student.as_json({include: :reports})
   end
 
   def show 
