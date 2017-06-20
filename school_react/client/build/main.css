@@ -1,12 +1,9 @@
-.backimage{
+body{
   font-family: Verdana;
   margin: 0;
-  background-color: #FFCC99;
-
-  
-
+  background-image : url(images/schoolbk.jpg);
 }
-h1, h2, h4 {
+  h1, h2, h4 {
   color: black;
   text-align: center;
 }
@@ -33,7 +30,7 @@ h1, h2, h4 {
       margin: 0;
       padding: 0;
       overflow: hidden;
-      background-color: #FFCC99;
+      background-color: #3352FF;
   }
 
   .nav li {
@@ -83,4 +80,7 @@ button{
 button:hover{
   background-color: crimson;
   cursor: pointer;
+}
+.section{
+  float: center;
 }

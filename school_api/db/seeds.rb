@@ -21,9 +21,12 @@ n1 = Newsletter.create!({details:'Sports day Coming Soon',date: DateTime.now(),s
 
 
  # user1 = User.create!({email:"satish.kura@gmail.com",password:"password"})
-  u1= User.create!(email: "me@home.com", password: "password")
+  u1= User.create!(email: "my@home.com", password: "password")
+  u2= User.create!(email: "raj@home.com", password: "password")
 
   sec1 = Section.create({name: "p1", num_of_students: 20,school_id: s1.id, user_id:u1.id})
+  sec1 = Section.create({name: "p2", num_of_students: 20,school_id: s1.id, user_id:u2.id})
+  
  t1 = Teacher.create!({name:"Orr",email: "something@gmail.com",section_id:sec1.id})
   
 

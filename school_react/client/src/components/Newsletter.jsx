@@ -28,7 +28,7 @@ class Newsletter extends React.Component {
     request.send(null)
   }
 
-  fetchNewsLetter(userid) {
+  fetchNewsLetter() {
 
     const request = new XMLHttpRequest()
     request.open("GET", "http://localhost:5000/api/newsletters")
@@ -52,8 +52,8 @@ class Newsletter extends React.Component {
   }
 
   render() {
-    let news =  this.state.newsletters.map((newslet) => {
-        return <div>{newslet.details}</div>
+    let news =  this.state.newsletters.map((newslet,index) => {
+        return <div key={index}>{newslet.details}</div>
     })
 
     return (

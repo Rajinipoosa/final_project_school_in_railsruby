@@ -11,7 +11,7 @@ class Section extends React.Component {
 
   componentDidMount() {
     const request = new XMLHttpRequest()
-    console.log("hello")
+    
     request.open("GET", "http://localhost:5000/api/users.json")
     request.setRequestHeader("Content-Type", "application/json")
     request.withCredentials = true
@@ -31,7 +31,7 @@ class Section extends React.Component {
   fetchSection(userid) {
 
     const request = new XMLHttpRequest()
-    request.open("GET", "http://localhost:5000/api/sections")
+    request.open("GET", "http://localhost:5000/api/users/userid/sections")
     request.setRequestHeader("Content-Type", "application/json")
     request.withCredentials = true
 
@@ -52,15 +52,18 @@ class Section extends React.Component {
   }
 
   render() {
-    let secs =  this.state.sections.map((section) => {
-        return <div>{newslet.details}</div>
+    let secs =  this.state.sections.map((section,index) => {
+        return <div key={index} className="section" >
+        <p >{section.name} class and Number of students {section.num_of_students}</p>
+              
+        </div>
+        
     })
 
     return (
       <div>
-        <h4>Newsletter</h4>
-        <p>Welcome to our Newsletter Page</p>
-        {news}
+        <h4>Welcome to Classes Page</h4>
+        {secs}
       </div>
       )
   }

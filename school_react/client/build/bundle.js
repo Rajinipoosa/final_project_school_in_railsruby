@@ -7390,7 +7390,7 @@ var Newsletter = function (_React$Component) {
     }
   }, {
     key: "fetchNewsLetter",
-    value: function fetchNewsLetter(userid) {
+    value: function fetchNewsLetter() {
       var _this3 = this;
 
       var request = new XMLHttpRequest();
@@ -7412,10 +7412,10 @@ var Newsletter = function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var news = this.state.newsletters.map(function (newslet) {
+      var news = this.state.newsletters.map(function (newslet, index) {
         return _react2.default.createElement(
           "div",
-          null,
+          { key: index },
           newslet.details
         );
       });
@@ -7489,7 +7489,7 @@ var Section = function (_React$Component) {
       var _this2 = this;
 
       var request = new XMLHttpRequest();
-      console.log("hello");
+
       request.open("GET", "http://localhost:5000/api/users.json");
       request.setRequestHeader("Content-Type", "application/json");
       request.withCredentials = true;
@@ -7511,7 +7511,7 @@ var Section = function (_React$Component) {
       var _this3 = this;
 
       var request = new XMLHttpRequest();
-      request.open("GET", "http://localhost:5000/api/sections");
+      request.open("GET", "http://localhost:5000/api/users/userid/sections");
       request.setRequestHeader("Content-Type", "application/json");
       request.withCredentials = true;
 
@@ -7530,11 +7530,17 @@ var Section = function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var secs = this.state.sections.map(function (section) {
+      var secs = this.state.sections.map(function (section, index) {
         return _react2.default.createElement(
           "div",
-          null,
-          newslet.details
+          { key: index, className: "section" },
+          _react2.default.createElement(
+            "p",
+            null,
+            section.name,
+            " class and Number of students ",
+            section.num_of_students
+          )
         );
       });
 
@@ -7544,14 +7550,9 @@ var Section = function (_React$Component) {
         _react2.default.createElement(
           "h4",
           null,
-          "Newsletter"
+          "Welcome to Classes Page"
         ),
-        _react2.default.createElement(
-          "p",
-          null,
-          "Welcome to our Newsletter Page"
-        ),
-        news
+        secs
       );
     }
   }]);
