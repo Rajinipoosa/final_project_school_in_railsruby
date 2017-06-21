@@ -5,7 +5,7 @@ import Contactus from './Contactus'
 import Newsletter from './Newsletter'
 import StudentDetails from './StudentDetails'
 import TeacherDetails from './TeacherDetails'
-import Events from './Events'
+
 
 
 
@@ -14,7 +14,7 @@ const Main = () => (
   <li><Link to="/Newsletter">Newsletter</Link></li>
   <li><Link to="/StudentDetails">StudentDetails</Link></li>
   <li><Link to="/TeacherDetails">TeacherDetails</Link></li>
-  <li><Link to="/Events">Events</Link></li>
+  
    
  
   <li><Link to="/Contactus">Contactus</Link></li>

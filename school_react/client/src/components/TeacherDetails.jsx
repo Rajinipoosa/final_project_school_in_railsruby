@@ -23,7 +23,7 @@ class TeacherDetails extends React.Component {
         this.fetchSection(user.userid);
       }else if(request.status === 401){
         //redirect to userlogin
-        <UserLogin/>
+       
       }
     }
     request.send(null)

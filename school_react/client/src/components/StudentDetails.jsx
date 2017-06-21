@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link, Route } from 'react-router-dom'
-
+import {browserHistory} from 'react-router';
 
 class  StudentDetails extends React.Component{
  constructor(props) {
@@ -26,8 +26,7 @@ componentDidMount() {
       
 
     }else if(request.status === 401){
-          //redirect to userlogin
-          <p><Link to= '/UserLogin'>Please Login</Link></p>
+        this.props.history.push('./UserLogin'); 
         }
       }
       request.send(null)

@@ -22,9 +22,9 @@ componentDidMount(){
 
  request.onload = () => {
   if(request.status === 200){
-   console.log("request: ", request.responseText);
+   
    var data = JSON.parse(request.responseText);
-   console.log(data)
+  
    this.setState( { schools: data 
                     } )
 

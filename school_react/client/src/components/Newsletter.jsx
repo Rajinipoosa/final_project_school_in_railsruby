@@ -1,4 +1,6 @@
 import React from 'react';
+import {browserHistory} from 'react-router';
+
 
 class Newsletter extends React.Component {
   constructor(props) {
@@ -11,7 +13,7 @@ class Newsletter extends React.Component {
 
   componentDidMount() {
     const request = new XMLHttpRequest()
-    console.log("hello")
+    
     request.open("GET", "http://localhost:5000/api/users.json")
     request.setRequestHeader("Content-Type", "application/json")
     request.withCredentials = true
@@ -22,8 +24,8 @@ class Newsletter extends React.Component {
         this.fetchNewsLetter();
       }else if(request.status === 401){
         // this.context.router.push('./UserLogin');
-         alert("please login")
-        
+       // this.props.history.goBack()
+       this.props.history.push('./UserLogin'); 
            
       }
     }
