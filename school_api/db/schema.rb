@@ -1,4 +1,4 @@
-  # encoding: UTF-8
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620102810) do
+ActiveRecord::Schema.define(version: 20170621125905) do
 
   create_table "newsletters", force: :cascade do |t|
     t.text     "details"
@@ -48,9 +48,11 @@ ActiveRecord::Schema.define(version: 20170620102810) do
     t.datetime "updated_at",      null: false
     t.integer  "school_id"
     t.integer  "user_id"
+    t.integer  "teacher_id"
   end
 
   add_index "sections", ["school_id"], name: "index_sections_on_school_id"
+  add_index "sections", ["teacher_id"], name: "index_sections_on_teacher_id"
   add_index "sections", ["user_id"], name: "index_sections_on_user_id"
 
   create_table "student_reports", force: :cascade do |t|
@@ -82,12 +84,9 @@ ActiveRecord::Schema.define(version: 20170620102810) do
   create_table "teachers", force: :cascade do |t|
     t.string   "name"
     t.text     "email"
-    t.integer  "section_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "teachers", ["section_id"], name: "index_teachers_on_section_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

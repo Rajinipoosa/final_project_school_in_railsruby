@@ -19,7 +19,8 @@ class TeacherDetails extends React.Component {
     request.onload = () => {
 
       if(request.status === 200){
-        this.fetchSection();
+        const user = JSON.parse(request.responseText)
+        this.fetchSection(user.userid);
       }else if(request.status === 401){
         //redirect to userlogin
         <UserLogin/>
@@ -31,7 +32,7 @@ class TeacherDetails extends React.Component {
   fetchSection(userid) {
 
     const request = new XMLHttpRequest()
-    request.open("GET", "http://localhost:5000/api/users/userid/sections")
+    request.open("GET", "http://localhost:5000/api/users/" + userid + "/sections/teachers")
     request.setRequestHeader("Content-Type", "application/json")
     request.withCredentials = true
 
@@ -54,8 +55,14 @@ class TeacherDetails extends React.Component {
   render() {
     let secs =  this.state.sections.map((section,index) => {
         return <div key={index} className="section" >
-        <p >{section.name} class and Number of students {section.num_of_students}</p>
-              
+        <p >{section.name} class,Number of students  in class :{section.num_of_students}</p>
+          <ul className="teacher" key={"teacher" + index}>  
+           <li> Teacher Name: {section.teacher.name}</li> <li> Teacher Emailid: {section.teacher.email}</li></ul>
+
+          
+       
+               
+             
         </div>
         
     })

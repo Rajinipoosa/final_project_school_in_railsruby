@@ -1,3 +1,5 @@
 class Teacher < ActiveRecord::Base
-  belongs_to :section
+ 
+  has_one :section
+
 end

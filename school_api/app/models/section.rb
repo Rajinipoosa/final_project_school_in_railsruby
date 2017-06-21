@@ -1,4 +1,4 @@
 class Section < ActiveRecord::Base
-  has_one :teacher
+  belongs_to :teacher
 
 end

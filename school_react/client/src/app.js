@@ -8,6 +8,7 @@ import StudentDetails from './components/StudentDetails'
 import TeacherDetails from './components/TeacherDetails'
 
 
+
 import Main from './components/Main'
 
 import { HashRouter, Route, IndexRoute } from 'react-router-dom'
@@ -24,6 +25,7 @@ render(){
             <Route path="/UserLogin" component={UserLogin}/>
             <Route path="/StudentDetails" component={StudentDetails}/>
             <Route path="/TeacherDetails" component={TeacherDetails}/>
+            
             
             <Route path="/Contactus" component={Contactus}/>
            
