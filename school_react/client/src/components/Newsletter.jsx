@@ -22,7 +22,9 @@ class Newsletter extends React.Component {
         this.fetchNewsLetter();
       }else if(request.status === 401){
         // this.context.router.push('./UserLogin');
+         alert("please login")
         
+           
       }
     }
     request.send(null)

@@ -1,11 +1,13 @@
 import React from 'react';
 
-class Section extends React.Component {
+class TeacherDetails extends React.Component {
   constructor(props) {
     super(props);
     this.fetchSection = this.fetchSection.bind(this);
     this.state = {
-      sections: []
+      sections: [],
+      teachers: []
+
     }
   }
 
@@ -69,4 +71,4 @@ class Section extends React.Component {
   }
 }
 
-export default Section;
+export default TeacherDetails;

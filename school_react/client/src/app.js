@@ -5,7 +5,7 @@ import Newsletter from './components/Newsletter'
 import Contactus from './components/Contactus'
 import UserLogin from './components/UserLogin'
 import StudentDetails from './components/StudentDetails'
-import Section from './components/Section'
+import TeacherDetails from './components/TeacherDetails'
 
 
 import Main from './components/Main'
@@ -23,7 +23,7 @@ render(){
             <Route path="/Newsletter" component={Newsletter}/>
             <Route path="/UserLogin" component={UserLogin}/>
             <Route path="/StudentDetails" component={StudentDetails}/>
-            <Route path="/Section" component={Section}/>
+            <Route path="/TeacherDetails" component={TeacherDetails}/>
             
             <Route path="/Contactus" component={Contactus}/>
            
