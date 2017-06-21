@@ -5,9 +5,7 @@ class TeacherDetails extends React.Component {
     super(props);
     this.fetchSection = this.fetchSection.bind(this);
     this.state = {
-      sections: [],
-      teachers: []
-
+      sections: []
     }
   }
 
