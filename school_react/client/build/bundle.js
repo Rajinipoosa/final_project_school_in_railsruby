@@ -8775,7 +8775,7 @@ var Contactus = function (_React$Component) {
         _react2.default.createElement(
           'h1',
           null,
-          'Contact Us@'
+          'Contact Us'
         ),
         _react2.default.createElement(
           'p',
@@ -8818,7 +8818,7 @@ var Contactus = function (_React$Component) {
 
 Contactus.defaultProps = {
   center: { lat: 55.937914, lng: -3.295366 },
-  zoom: 12
+  zoom: 10
 };
 
 exports.default = Contactus;
@@ -9135,19 +9135,16 @@ var TeacherDetails = function (_React$Component) {
       var _this2 = this;
 
       var request = new XMLHttpRequest();
-
       request.open("GET", "http://localhost:5000/api/users.json");
       request.setRequestHeader("Content-Type", "application/json");
       request.withCredentials = true;
-
       request.onload = function () {
 
         if (request.status === 200) {
           var user = JSON.parse(request.responseText);
           _this2.fetchSection(user.userid);
         } else if (request.status === 401) {
-          //redirect to userlogin
-
+          _this2.props.history.push('./UserLogin');
         }
       };
       request.send(null);
@@ -9165,7 +9162,7 @@ var TeacherDetails = function (_React$Component) {
       request.onload = function () {
 
         if (request.status === 200) {
-          console.log('request.responseText', request.responseText);
+
           var sections = JSON.parse(request.responseText);
 
           console.log(sections);

@@ -46,9 +46,9 @@ Please also remind your child to bring their water bottle to school every day.',
 
    
    stu1 = Student.create!({name:"Virat",image:'images/boy.jpg',section_id:sec1.id,teacher_id: t1.id, user_id:u1.id})
-   stu2 = Student.create!({name:"Deeva",image:'images/deeva.jpg',section_id:sec1.id,teacher_id: t1.id, user_id:u1.id})
+   stu2 = Student.create!({name:"Deeva",image:'images/deeva.jpg',section_id:sec1.id,teacher_id: t1.id, user_id:u2.id})
 
-   stu3 = Student.create!({name:"Aditri",image:'images/aditri.jpg',section_id:sec1.id,teacher_id: t1.id, user_id:u1.id})
+   stu3 = Student.create!({name:"Aditri",image:'images/aditri.jpg',section_id:sec1.id,teacher_id: t1.id, user_id:u2.id})
   
 
    StudentReport.create!({section_id:sec1.id,report_id: r1.id,student_id: stu1.id})

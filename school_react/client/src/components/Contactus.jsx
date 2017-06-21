@@ -10,7 +10,7 @@ class Contactus extends React.Component{
   render(){
     return(
       <div >
-        <h1>Contact Us@</h1>
+        <h1>Contact Us</h1>
        <p>Wester Broom Place</p>
        <p>EH12 7RT</p>
        <p>4343454646</p>
@@ -35,7 +35,7 @@ class Contactus extends React.Component{
 }
 Contactus.defaultProps = {
   center: {lat: 55.937914, lng: -3.295366},
-  zoom: 12
+  zoom: 10
 };
 
 
