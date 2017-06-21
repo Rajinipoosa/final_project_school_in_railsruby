@@ -9,7 +9,7 @@ class Contactus extends React.Component{
 }
   render(){
     return(
-      <div>
+      <div >
         <h1>Contact Us@</h1>
        <p>Wester Broom Place</p>
        <p>EH12 7RT</p>

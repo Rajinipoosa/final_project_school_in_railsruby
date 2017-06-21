@@ -89,7 +89,9 @@ button:hover{
   cursor: pointer;
 }
 .section{
+  list-style-type: none;
   float: center;
+ 
 }
 .studentd{
   list-style-type: none;
@@ -101,6 +103,7 @@ button:hover{
 }
 .contact{
  text-align: center;
+ float: center;
 
 
 }

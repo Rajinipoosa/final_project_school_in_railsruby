@@ -56,8 +56,10 @@ class TeacherDetails extends React.Component {
     let secs =  this.state.sections.map((section,index) => {
         return <div key={index} className="section" >
         <p >{section.name} class,Number of students  in class :{section.num_of_students}</p>
-          <ul className="teacher" key={"teacher" + index}>  
-           <li> Teacher Name: {section.teacher.name}</li> <li> Teacher Emailid: {section.teacher.email}</li></ul>
+          <ul className="section" key={"teacher" + index}>  
+           <li> Teacher Name: {section.teacher.name}</li>
+           <br/> <li> Teacher Emailid: {section.teacher.email}</li><br/>
+           <li><img src={section.teacher.image} width = '20%' height = '20%'/></li></ul>
 
           
        

@@ -33,8 +33,8 @@ Please also remind your child to bring their water bottle to school every day.',
   u2 = User.create!(email: "rajji@home.com", password: "password")
 
 
-  t1 = Teacher.create!({name:"Orr",email: "something@gmail.com"})
-  t2 = Teacher.create!({name:"Simson",email: "something@gmail.com"})
+  t1 = Teacher.create!({name:"Orr",email: "something@gmail.com",image:'images/teacher1.jpeg'})
+  t2 = Teacher.create!({name:"Simson",email: "something@gmail.com",image:'images/teacher2.jpg'})
 
   sec1 = Section.create!({name: "p1", num_of_students: 20,school_id: s1.id, user_id:u1.id, teacher_id:t1.id})
   sec1 = Section.create!({name: "p2", num_of_students: 20,school_id: s1.id, user_id:u2.id,teacher_id:t2.id})
@@ -46,9 +46,9 @@ Please also remind your child to bring their water bottle to school every day.',
 
    
    stu1 = Student.create!({name:"Virat",image:'images/boy.jpg',section_id:sec1.id,teacher_id: t1.id, user_id:u1.id})
-   stu2 = Student.create!({name:"Deeva",image:'images/st1.jpeg',section_id:sec1.id,teacher_id: t1.id, user_id:u1.id})
+   stu2 = Student.create!({name:"Deeva",image:'images/deeva.jpg',section_id:sec1.id,teacher_id: t1.id, user_id:u1.id})
 
-   stu3 = Student.create!({name:"Aditri",image:'images/child.jpg',section_id:sec1.id,teacher_id: t1.id, user_id:u1.id})
+   stu3 = Student.create!({name:"Aditri",image:'images/aditri.jpg',section_id:sec1.id,teacher_id: t1.id, user_id:u1.id})
   
 
    StudentReport.create!({section_id:sec1.id,report_id: r1.id,student_id: stu1.id})
